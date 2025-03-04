@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "module": "NodeNext",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "target": "ES2022",
+        "forceConsistentCasingInFileNames": true,
+        "removeComments": true,
+        "noImplicitAny": true,
+        "strict": true,
+        "moduleResolution": "NodeNext",
+        "sourceMap": true,
+        "outDir": "dist",
+        "skipLibCheck": true,
+        "newLine": "lf"
+    },
+    "include": [
+        "src/**/*.ts"
+    ]
+}

@@ -1,0 +1,63 @@
+{
+  "name": "actual-budget-bank-sync",
+  "version": "1.0.0",
+  "description": "Automatically synchronizes bank transactions for Actual Budget",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "tsc-watch --onSuccess \"node dist/server.js\"",
+    "build": "tsc",
+    "lint": "eslint \"**/*.{js,ts}\"",
+    "lint:fix": "eslint --fix \"**/*.{js,ts}\"",
+    "docker:build": "docker build -t actual-budget-bank-sync .",
+    "docker:run": "docker run -d --name actual-budget-bank-sync actual-budget-bank-sync",
+    "postdocker:build": "docker image prune -f --filter label=stage=intermediate"
+  },
+  "author": "John Arrandale",
+  "license": "ISC",
+  "homepage": "https://github.com/bootsie123/actual-budget-bank-sync",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bootsie123/actual-budget-bank-sync.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bootsie123/actual-budget-bank-sync/issues"
+  },
+  "keywords": [
+    "actual budget",
+    "actual",
+    "budget",
+    "sync",
+    "bank",
+    "automated"
+  ],
+  "exports": {
+    ".": "./dist/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "@typescript-eslint/parser": "^8.26.0",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-config-recommended": "^4.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^6.2.1",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@actual-app/api": "^25.3.1",
+    "@types/node-cron": "^3.0.11",
+    "cron": "^4.1.0",
+    "dotenv": "^16.4.7"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --cache --fix"
+  }
+}

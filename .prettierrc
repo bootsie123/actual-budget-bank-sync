@@ -1,0 +1,9 @@
+{
+  "singleQuote": false,
+  "trailingComma": "none",
+  "arrowParens": "avoid",
+  "semi": true,
+  "bracketSpacing": true,
+  "options.editorconfig": true,
+  "endOfLine": "lf"
+}

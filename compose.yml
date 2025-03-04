@@ -1,0 +1,9 @@
+services:
+  actual-budget-bank-sync:
+    image: "ghcr.io/bootsie123/actual-budget-bank-sync:latest"
+    environment:
+      SERVER_URL:
+      PASSWORD:
+      SYNC_ID:
+      SCHEDULE: 0 0 * * *
+      RUN_IMMEDIATELY: true
