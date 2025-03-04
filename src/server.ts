@@ -18,7 +18,7 @@ const sync = async (callback: CronOnCompleteCallback) => {
   });
 
   await api.downloadBudget(environment.syncId);
-  //await api.runBankSync();
+  await api.runBankSync();
   await api.shutdown();
 
   callback();
