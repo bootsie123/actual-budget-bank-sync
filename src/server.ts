@@ -12,6 +12,8 @@ const genTimestamp = () => {
 const sync = async (callback: CronOnCompleteCallback) => {
   console.log(`${genTimestamp()} Starting sync`);
 
+  console.log(`${genTimestamp()} Connecting to server ${environment.serverURL}`);
+
   await api.init({
     serverURL: environment.serverURL,
     password: environment.password
