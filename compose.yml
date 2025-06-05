@@ -7,3 +7,5 @@ services:
       SYNC_ID:
       SCHEDULE: 0 0 * * *
       RUN_IMMEDIATELY: true
+      # Optional
+      #ENCRYPTION_PASSWORD:

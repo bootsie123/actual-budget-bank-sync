@@ -19,7 +19,12 @@ const sync = async (callback: CronOnCompleteCallback) => {
     password: environment.password
   });
 
-  await api.downloadBudget(environment.syncId);
+
+  if (environment.encryptionPassword.length > 0) {
+    await api.downloadBudget(environment.syncId, { password: environment.encryptionPassword });
+  } else {
+    await api.downloadBudget(environment.syncId);
+  }
   await api.runBankSync();
   await api.shutdown();
 
