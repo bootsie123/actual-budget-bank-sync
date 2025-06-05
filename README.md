@@ -52,13 +52,14 @@ nano compose.yml
 
 In order to run the app, the following configuration options must be set in the `.env` file or within `compose.yml`.
 
-| Name            | Type    | Default      | Description                                                                                   |
-| --------------- | ------- | ------------ | --------------------------------------------------------------------------------------------- |
-| SERVER_URL      | String  |              | URL of your Actual Budget server                                                              |
-| PASSWORD        | String  |              | Password for your Actual Budget server                                                        |
-| SYNC_ID         | String  |              | The synchronization ID. This can be gathered from Settings → Show advanced settings → Sync ID |
-| SCHEDULE        | String  | 0 0 \* \* \* | The syncing schedule in [cron](https://en.wikipedia.org/wiki/Cron) format                     |
-| RUN_IMMEDIATELY | Boolean | false        | Determines if a sync job should run immediately after the application starts                  |
+| Name                | Type    | Default      | Description                                                                                   |
+| ------------------- | ------- | ------------ | --------------------------------------------------------------------------------------------- |
+| SERVER_URL          | String  |              | URL of your Actual Budget server                                                              |
+| PASSWORD            | String  |              | Password for your Actual Budget server                                                        |
+| ENCRYPTION_PASSWORD | String  |              | (optional) Encryption password for your budget file                                           |
+| SYNC_ID             | String  |              | The synchronization ID. This can be gathered from Settings → Show advanced settings → Sync ID |
+| SCHEDULE            | String  | 0 0 \* \* \* | The syncing schedule in [cron](https://en.wikipedia.org/wiki/Cron) format                     |
+| RUN_IMMEDIATELY     | Boolean | false        | Determines if a sync job should run immediately after the application starts                  |
 
 ## Usage
 
