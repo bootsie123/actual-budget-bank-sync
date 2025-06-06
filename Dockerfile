@@ -1,6 +1,7 @@
 FROM node:22-alpine AS base
 WORKDIR /usr/src/app
 COPY package*.json ./
+RUN apk add --no-cache tzdata
 
 FROM base AS development
 LABEL stage=intermediate

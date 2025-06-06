@@ -60,6 +60,7 @@ In order to run the app, the following configuration options must be set in the 
 | SYNC_ID             | String  |              | The synchronization ID. This can be gathered from Settings → Show advanced settings → Sync ID |
 | SCHEDULE            | String  | 0 0 \* \* \* | The syncing schedule in [cron](https://en.wikipedia.org/wiki/Cron) format                     |
 | RUN_IMMEDIATELY     | Boolean | false        | Determines if a sync job should run immediately after the application starts                  |
+| TZ                  | String  | Etc/UTC      | (optional) Timezone string for container, eg. `Europe/Copenhagen`<br/>This will effect the sync schedule. See [this list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) for timezone strings. |
 
 ## Usage
 
