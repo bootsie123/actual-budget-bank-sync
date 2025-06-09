@@ -12,19 +12,23 @@ const genTimestamp = () => {
 const sync = async (callback: CronOnCompleteCallback) => {
   console.log(`${genTimestamp()} Starting sync`);
 
-  console.log(`${genTimestamp()} Connecting to server ${environment.serverURL}`);
+  console.log(
+    `${genTimestamp()} Connecting to server ${environment.serverURL}`
+  );
 
   await api.init({
     serverURL: environment.serverURL,
     password: environment.password
   });
 
-
-  if (environment.encryptionPassword.length > 0) {
-    await api.downloadBudget(environment.syncId, { password: environment.encryptionPassword });
+  if (environment.encryptionPassword) {
+    await api.downloadBudget(environment.syncId, {
+      password: environment.encryptionPassword
+    });
   } else {
     await api.downloadBudget(environment.syncId);
   }
+
   await api.runBankSync();
   await api.shutdown();
 
